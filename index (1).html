@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Terefe Alemayehu · Google account Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f8f9fa; 
+            color: #202124;
+            line-height: 1.6;
+        }
+        .header {
+            background: white;
+            padding: 16px 24px;
+            border-bottom: 1px solid #dadce0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            flex-wrap: wrap;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-text {
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 500;
+            font-size: 22px;
+            color: #5f6368;
+        }
+        .nav a {
+            margin-left: 32px;
+            text-decoration: none;
+            color: #5f6368;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+        .nav :hover, .nav .active {
+            color: #1a73e8;
+        }
+        .hero {
+            background: papayawhip;
+            padding: 70px 24px;
+            text-align: center;
+            border-bottom: 1px solid #dc1;
+        }
+        .hero h1 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 48px;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+        .hero .highlight {
+            color: green;
+            font-weight: 500;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 16px;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: #1a73e8;
+            color: white;
+            border: 1px solid #1a73e8;
+        }
+        .btn-primary:hover {
+            background: #1557b0;
+            box-shadow: 0 2px 8px rgba(26, 115, 232, 0.3);
+        }
+        .btn-secondary {
+            background: #1a73e8;
+            color: greenyellow;
+            border: 1px solid #dadce0;
+        }
+        .btn-secondary:hover {
+            background: #f8f9fa;
+            border-color: #1a73e8;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+            color: #3c4043;
+        }
+        .projects-grid {
+            display: flex;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1px solid 
+            none;
+        }
+        .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 32px rgba(0, 0, 0, 0.12);
+}
+
+        .project-info {
+            padding: 28px 32px;
+        }
+        .project-info h3 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 26px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: #202124;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .project-info h3  {
+            color: #1a73e8;
+            font-size: 28px;
+        }
+        .project-info p {
+            color: #3c4043;
+            margin-bottom: 20px;
+            line-height: 1.55;
+            font-size: 16px;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .tag {
+            background: #e8f0fe;
+            color: #174ea6;
+            padding: 6px 14px;
+            border-radius: 32px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+                .form-group {
+            max-width: 500px;
+            margin: 0 auto 40px;
+            background:#22e4f333 ;
+            padding: 28px;
+            border-radius: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #e0e4e8;
+        }
+        .form-group input .form-group textarea{
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 16px;
+            border: 1px solid #dadce0;
+            border-radius: 28px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 2px rgba(26,115,232,0.2);
+        }
+        .form-group textarea{
+            min-height: 100px;
+            resize: vertical;
+        }
+        .form-group bottom{
+            background: beige;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 28px;
+            font-weight: 500;
+            font-size: 12px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        .form-group bottom:hover {
+            background: #1557b0;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .skill-item {
+            background: white;
+            border: 1px solid #dadce0;
+            padding: 12px 24px;
+            border-radius see: 32px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            color: #1a73e8;
+        }
+        .skill-item:hover {
+            border-color: #1a73e8;
+            background: #f1f3f4;
+            transform: translateY(-2px);
+        }
+        .skill-item i {
+            color: #1a73e8;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+            margin-bottom: 32px;
+        }
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #1a73e8;
+            font-size: 18px;
+            padding: 12px 28px;
+            background: #f1f3f4;
+            border-radius: 48px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .contact-link:hover {
+            background: #e8f0fe;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .contact-link i {
+            font-size: 22px;
+        }
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e8eaed;
+        }
+        .social-icon-link {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #5f6368;
+            transition: all 0.2s;
+            padding: 12px 24px;
+            border-radius: 48px;
+            background: white;
+            border: 1px solid #dadce0;
+        }
+        .social-icon-link i {
+            font-size: 28px;
+        }
+        .social-icon-link span {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .social-icon-link:hover {
+            background: #f1f3f4;
+            border-color: #1a73e8;
+            color: #1a73e8;
+            transform: translateY(-3px);
+        }
+        .footer {
+            background: #f8f9fa;
+            border-top: 1px solid #dadce0;
+            padding: 24px;
+            text-align: center;
+            color: #5f6368;
+        }
+        .footer a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #323232;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+            .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: red;
+        }
+        .skill-item {
+            background: ivory;
+            border: 1px solid #dadce0;
+            padding: 12px 24px;
+            border-radius: 32px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: red;
+        }
+        .skill-item i {
+            color: #1a8;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            background: ivory ;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #3c3;
+            font-size: 22px;
+            padding: 20px 24px;
+            border-radius: 200px;
+              transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .contact-link i {
+            font-size: 2px;
+        }
+        }
+             .footer {
+            background: greenyellow;
+            border-top: 1px solid #dadce0;
+            padding: 24px;
+            text-align: center;
+            color: #5f6368;
+        }
+        .footer{
+            color: #1a73e8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="logo">
+        <span class="logo-text">Terefe Portfolio</span>
+    </div>
+    <nav class="nav">
+        <a href="#about" class="active">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+<section class="hero">
+        </div>
+    </div>
+    <h1>Hi, I'm Terefe Alemayehu</span></h1>
+    <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Touch </a>
+    </div>
+</section>
+<section id="about" class="section"> <h2 class="section-title">About Me</h2>
+  <div class="about-content">
+<p>I'm a second-year IT student at MTU University. I love building intuitive digital experiences that solve real problems. Currently exploring advanced JavaScript frameworks and cloud integration.</p>
+    </div>
+</section>
+<section id="projects" class="section">
+    <h2 class="section-title">Featured Project</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-info">
+   <h3> Clinic Management System</h3>
+ <p>Complete patient record system with appointment scheduling, prescriptions, and database integration — my first  project. Built with C++ & Database</p>
+                <div class="project-tags">
+                    <span class="tag"><i class="fas fa-database"></i> MySQL</span>
+                    <span class="tag"><i class="fab fa-php"></i> C++</span>
+                    <span class="tag"><i class="fas fa-chart-line"></i> Live Analytics</span>
+                    <span class="tag"><i class="fas fa-calendar-check"></i> Smart Scheduling</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="skills" class="section">
+    <h2 class="section-title">Skills & Tools</h2>
+    <div class="skills-container">
+        <div class="skill-item"><i class="fab fa-html5"></i> HTML</div>
+        <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS</div>
+        <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+        <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+        <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
+        <div class="skill-item"><i class="fas fa-code-branch"></i> OOP</div>
+    </div>
+</section>
+<section id="contact" class="section">
+    <h2 class="section-title"> Connect</h2>
+    <div class="form-group">
+        <input type="text" id="fullname" placeholder="Full name" required>
+        <input type="email" id="email" placeholder="Email address" required>
+        <input type="tel" id="phone" placeholder="Phone number">
+        <textarea id="message" placeholder="Your message..."></textarea>
+        <button id="sendMsgBtn">Send Message <i class="fas fa-paper-plane"></i></button>
+    </div>
+    <div class="contact-links">
+        <a href="mailto:terealex19@gmail.com" class="contact-link" id="emailLink">
+            <i class="fas fa-envelope"></i> terealex19@gmail.com
+        </a>
+    </div>
+    <div class="social-row">
+        <a href="#" class="social-icon-link" id="facebookLink">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+        </a>
+        <a href="#" class="social-icon-link" id="tiktokLink">
+            <i class="fab fa-tiktok"></i>
+            <span>TikTok</span>
+        </a>
+        <a href="#" class="social-icon-link" id="youtubeLink">
+            <span>YouTube</span>
+        </a>
+        <a href="#" class="social-icon-link" id="instagramLink">
+            <span>Instagram</span>
+        </a>
+        <a href="#" class="social-icon-link" id="googleProfileLink">
+            <span>Google</span>
+        </a>
+    </div>
+</section>
+<footer class="footer">
+    <p>© 2025 Terefe Alemayehu · Google-inspired design · 
+</p>
+</footer>
+</body>
+</html>
